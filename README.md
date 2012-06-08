@@ -13,6 +13,21 @@ The gem is extremely simple to use. There are two class methods that return the 
     NationalRail::Timetable.arrivals(token, "BHM")
     # => [{"origin":"Longbridge","origin_crs":"LOB","destination":"Four Oaks","destination_crs":"FOK","time":"14:42"},{"origin":"Wolverhampton","origin_crs":"WVH","destination":"Walsall","destination_crs":"WSL","time":"14:44"},...]            
             
+
+## Wrap it in Sinatra
+I've used this in a simple Sinatra app. It's easy:
+
+    require 'sinatra'
+    require 'national_rail'
+    require 'json'
+
+    get '/departures/:crs' do
+      NationalRail::Timetable.departures('...', params[:crs]).to_json
+    end
+    get '/arrivals/:crs' do
+      NationalRail::Timetable.arrivals('...', params[:crs]).to_json
+    end
+            
 ## Contributing
 Please feel free to fork and modify this code. 
 
