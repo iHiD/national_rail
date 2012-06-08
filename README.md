@@ -1,4 +1,4 @@
-# NationalRail
+# National Rail API
 ## Installation
 
 Use in a Bundler app. Add to bundler:
