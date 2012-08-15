@@ -24,10 +24,10 @@ require 'national_rail'
 require 'json'
 
 get '/departures/:crs' do
-  NationalRail::Timetable.departures('...', params[:crs]).to_json
+  NationalRail::Timetable.departures('YOUR-TOKEN', params[:crs].upcase).to_json
 end
 get '/arrivals/:crs' do
-  NationalRail::Timetable.arrivals('...', params[:crs]).to_json
+  NationalRail::Timetable.arrivals('YOUR-TOKEN', params[:crs].upcase).to_json
 end
 ```
             
